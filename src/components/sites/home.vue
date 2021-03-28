@@ -1,8 +1,8 @@
 <template>
 	<div class="container">
 		<myheader></myheader>
-		<categories></categories>
 		HOME-PAGE
+		<categories></categories>
 	</div>
 </template>
 

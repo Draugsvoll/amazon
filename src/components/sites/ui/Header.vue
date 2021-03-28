@@ -1,6 +1,8 @@
 <template>
 	<div class="header">
-		<div class="left">Amazon</div>
+		<div class="left">
+			<span>Amazon</span>
+		</div>
 		<input type="text">
 		<div class="right">
 			<ul>
@@ -27,14 +29,21 @@ export default {
 }
 
 .left, .right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+span {
+	vertical-align: middle;
+
 }
 li {
 	display: inline;
 	margin: 0 8px 0 8px;
 }
 input {
-	width:800px;
-	padding:0.6rem 0.4rem;
+	width:600px;
+	padding:0.5rem 0.4rem;
 	border-radius: 5px;
 	border:3px solid rgba(255, 187, 0, 0);
 	outline:none;
