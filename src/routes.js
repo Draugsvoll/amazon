@@ -1,4 +1,5 @@
 import ViewCategory from './components/sites/ViewCategory'
+import ViewProduct from './components/sites/ViewProduct'
 import Home from './components/sites/home'
 
 import VueRouter from 'vue-router'
@@ -11,6 +12,7 @@ const router = new VueRouter ({
     routes : [
         { path: '/category', component: ViewCategory },
         { path: '/', component: Home},
+        { path: '/product', component: ViewProduct},
     ]
 })
 

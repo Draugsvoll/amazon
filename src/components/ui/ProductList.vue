@@ -20,13 +20,17 @@ export default {
 		}
 	},
 	created () {
-		//watches
-		// axios.get(`https://api.rainforestapi.com/request?api_key=D0D92EC1CE1E44F38A08179F255768EC&type=search&search_term=watches&amazon_domain=amazon.com`).then(resp => {
-		// 	var productList = resp.data.search_results
-		// 	this.productList = productList
-		// 	console.log(this.productList)
-		// 	this.$store.dispatch('fill_productlist', productList)
-        // })
+		var emptyList
+		this.$store.dispatch('fill_productlist', emptyList)
+
+		const category = this.$route.query.id
+		
+		axios.get(`https://api.rainforestapi.com/request?api_key=D0D92EC1CE1E44F38A08179F255768EC&type=search&search_term=${category}&amazon_domain=amazon.com`).then(resp => {
+			var productList = resp.data.search_results
+			this.productList = productList
+			console.log(this.productList)
+			this.$store.dispatch('fill_productlist', productList)
+        })
 	}
 }
 </script>

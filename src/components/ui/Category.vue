@@ -27,10 +27,11 @@ export default {
   width:350px;
   margin:20px;
   padding:0;
+  cursor: pointer;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+  box-shadow: 8 8px 8px 8px rgba(36, 39, 41, 0.1);
   transition: 0.2;
 }
 

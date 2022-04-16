@@ -1,14 +1,21 @@
 <template>
   <div id="app">
+    <appheader></appheader>
     <router-view></router-view>
+    <appfooter></appfooter>
   </div>
 </template>
 
 <script>
+import Header from './components/ui/Header'
+import Footer from './components/ui/Footer'
 
 export default {
   name: 'App',
-  
+  components: {
+    appheader: Header,
+    appfooter: Footer,
+  }
 }
 </script>
 
@@ -25,5 +32,6 @@ body, html {
 }
 * {
   margin:0;
+  font-family: "Amazon Ember",Arial,sans-serif;
 }
 </style>

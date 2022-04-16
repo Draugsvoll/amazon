@@ -2,7 +2,7 @@
 	<div class="card" @click="open(product)">
 		<h3 class="title">{{ product.title }}</h3>
 		<!-- <p> {{ product.asin}} </p> -->
-		<img v-bind:src="product.image" alt="" width="185" height="175">
+		<img v-bind:src="product.image" alt="" >
 		<h1 class="price"> {{ product.price.raw}} </h1>
 	</div>
 </template>
@@ -13,7 +13,11 @@ export default {
     props: ['product'],
 	methods: {
 		open (product) {
-           window.location.href = `/product?id=` + product
+			// this.$store.dispatch('fill_product', product)
+			// console.log('Sender prod. til store: ', product)
+			// console.log('Logger store: ', this.$store.getters.product)
+
+			window.location.href = `/product?id=` + product.asin
 		}
 	},
 	created () {
@@ -26,14 +30,15 @@ export default {
 
 .card {
   background:white;
-  width:400px;
+  width:500px;
   height:430px;
   margin:20px;
   padding:0;
+  cursor:pointer;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+  box-shadow: 8px 8px 8px rgba(0,0,0,0.1);
   transition: 0.2s;
 }
 .title {
@@ -42,6 +47,8 @@ export default {
 img {
 	/* margin-bottom:-10px; */
 	object-fit: cover;
+	max-width:200px;
+	max-height:175px;
 }
 
 h3 {
